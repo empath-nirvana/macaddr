@@ -1,0 +1,14 @@
+[package]
+name = "macaddr"
+version = "0.1.0"
+edition = "2021"
+authors = ["John Thompson"]
+description = "Uses https://macaddress.io to lookup information about network devices. \nSet the MAC_API_KEY environment variable to your api key."
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.66"
+clap = { version = "4.0.26", features = ["derive"] }
+reqwest = { version = "0.11.13", features = ["json", "native-tls-vendored"] }
+serde = { version = "1.0.147", features = ["derive"] }
+tokio = { version = "1.21.2", features = ["full"] }
