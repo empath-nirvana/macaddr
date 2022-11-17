@@ -34,7 +34,6 @@ async fn get_company(api_key: &str, mac_address: &str) -> Result<String> {
         "https://api.macaddress.io/v1?apiKey={}&output=json&search={}",
         api_key, mac_address
     );
-    // let info: AddressInfo = reqwest::get(url).await?.text().await?;
     let response = reqwest::get(url).await?;
     if response.status().is_success() {
         let info: AddressInfo = response.json().await?;
@@ -43,7 +42,6 @@ async fn get_company(api_key: &str, mac_address: &str) -> Result<String> {
         let e: AddressError = response.json().await?;
         Err(anyhow!("{}", e.error))
     }
-    // Ok(info.vendor_details.company_name)
 }
 
 #[tokio::main]
