@@ -1,12 +1,14 @@
-This cli tool will query the api at https://macaddress.io and return the name of the vendor name of the device.
+This cli tool will query the api at https://macaddress.io and return the name of the vendor of the device.
 
 You have to sign up for an api key and set it as an environment variable called MAC_ADDR_API 
 
 To build it, you'll have to install the rust tool chain and run `cargo build --release`
 
-Instead of installing rust, you can just build the docker image with `docker build . -t empath/macaddr`  (or whatever you want to call it)
+There are prebuilt releases for it for windows, linux and mac that you can download on the github releases page.
 
-To run the binary, run 
+You can also just build the docker image with `docker build . -t <image name>`
+
+
 
 ```
 export MAC_API_KEY=<api key>
